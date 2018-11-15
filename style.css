@@ -213,7 +213,7 @@ body {
     height: 56.25vw;
 }
 
-.type1 {
+.nøgentype1 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -224,7 +224,7 @@ body {
     cursor: pointer;
 }
 
-.type2 {
+.nøgentype2 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -234,7 +234,7 @@ body {
     cursor: pointer;
 }
 
-.type3 {
+.nøgentype3 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -244,7 +244,7 @@ body {
     cursor: pointer;
 }
 
-.type4 {
+.nøgentype4 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -254,7 +254,7 @@ body {
     cursor: pointer;
 }
 
-.type5 {
+.persontype1 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -264,7 +264,7 @@ body {
     cursor: pointer;
 }
 
-.type6 {
+.persontype2 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -274,7 +274,7 @@ body {
     cursor: pointer;
 }
 
-.type7 {
+.persontype3 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -284,7 +284,7 @@ body {
     cursor: pointer;
 }
 
-.type8 {
+.persontype4 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -294,7 +294,7 @@ body {
     cursor: pointer;
 }
 
-.type9 {
+.andettype1 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -304,7 +304,7 @@ body {
     cursor: pointer;
 }
 
-.type10 {
+.andettype2 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -314,7 +314,7 @@ body {
     cursor: pointer;
 }
 
-.type11 {
+.andettype3 {
     position: absolute;
     background-repeat: no-repeat;
     width: 25vw;
@@ -410,6 +410,7 @@ body {
     animation-duration: 8s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
+    animation-fill-mode: both;
 }
 
 @keyframes falde {

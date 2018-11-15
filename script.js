@@ -1,3 +1,6 @@
+let life = 3;
+let timeLeft = 60;
+
 window.addEventListener("load", sidenVises);
 
 function sidenVises() {
@@ -74,7 +77,9 @@ function startGame() {
 
     document.querySelector("#nøgen").classList.add("falde");
     document.querySelector("#nøgen").classList.remove("hide");
+    document.querySelector("#nøgen").addEventListener("animationend", gameOver);
     document.querySelector("#person").classList.add("falde");
+    document.querySelector("#person").addEventListener("animationend", gonePerson);
     document.querySelector("#person").classList.remove("hide");
     document.querySelector("#andet").classList.add("falde");
     document.querySelector("#andet").classList.remove("hide");
@@ -83,15 +88,15 @@ function startGame() {
     document.querySelector("#person").addEventListener("click", clickPerson);
     document.querySelector("#andet").addEventListener("click", clickAndet);
 
-
+    timeLeftFc();
 }
 
 function clickNøgen() {
     console.log("nøgen klikket");
     document.querySelector("#nøgen").classList.remove("falde");
+    document.querySelector("#nøgen").removeEventListener("animationend", gameOver);
 
-
-    document.querySelector("#nøgen").classList.add("dissappear");
+    document.querySelector("#container1").classList.add("dissappear");
     document.querySelector("#nøgen").addEventListener("animationend", clearClassNøgen);
     document.querySelector("#nøgen").removeEventListener("click", clickNøgen);
 
@@ -107,12 +112,13 @@ function nyNøgen() {
     console.log("ny nøgen");
     document.querySelector("#nøgen").classList.add("position" + Math.floor((Math.random() * 4) + 1));
 
-    document.querySelector("#nøgen").classList.add("type" + Math.floor((Math.random() * 11) + 1));
+    document.querySelector("#nøgen").classList.add("nøgentype" + Math.floor((Math.random() * 4) + 1));
 
     document.querySelector("#nøgen").classList.remove("dissappear");
 
     document.querySelector("#nøgen").addEventListener("click", clickNøgen);
     document.querySelector("#nøgen").classList.add("falde");
+    document.querySelector("#nøgen").addEventListener("animationend", gameOver);
 }
 
 function clickPerson() {
@@ -121,8 +127,10 @@ function clickPerson() {
 
 
     document.querySelector("#person").classList.add("dissappear");
+    document.querySelector("#person").addEventListener("click", clearClassPerson);
     document.querySelector("#person").addEventListener("animationend", clearClassPerson);
     document.querySelector("#person").removeEventListener("click", clickPerson);
+    document.querySelector("#person").removeEventListener("animationend", gonePerson);
 }
 
 function clearClassPerson() {
@@ -135,12 +143,32 @@ function nyPerson() {
     console.log("ny person");
     document.querySelector("#person").classList.add("position" + Math.floor((Math.random() * 4) + 1));
 
-    document.querySelector("#person").classList.add("type" + Math.floor((Math.random() * 11) + 1));
+    document.querySelector("#person").classList.add("persontype" + Math.floor((Math.random() * 4) + 1));
 
     document.querySelector("#person").classList.remove("dissappear");
 
     document.querySelector("#person").addEventListener("click", clickPerson);
     document.querySelector("#person").classList.add("falde");
+    document.querySelector("#person").addEventListener("animationend", gonePerson);
+}
+
+function gonePerson() {
+    life--;
+    console.log("life er" +
+        life);
+    console.log("person gone");
+    if (life == 0) {
+        gameOver();
+    }
+    //   document.querySelector("#person").classList.remove("falde");
+    //
+    //
+    //    document.querySelector("#person").classList.add("dissappear");
+    //    document.querySelector("#person").addEventListener("click", clearClassPerson);
+    //    document.querySelector("#person").addEventListener("animationend", clearClassPerson);
+    //    document.querySelector("#person").removeEventListener("click", clickPerson);
+    //    document.querySelector("#person").removeEventListener("animationend", gonePerson);
+
 }
 
 function clickAndet() {
@@ -164,7 +192,7 @@ function nyAndet() {
     console.log("ny andet");
     document.querySelector("#andet").classList.add("position" + Math.floor((Math.random() * 4) + 1));
 
-    document.querySelector("#andet").classList.add("type" + Math.floor((Math.random() * 11) + 1));
+    document.querySelector("#andet").classList.add("andettype" + Math.floor((Math.random() * 3) + 1));
 
     document.querySelector("#andet").classList.remove("dissappear");
 
@@ -178,4 +206,18 @@ function levelComplete() {
 
 function gameOver() {
     console.log("game over");
+}
+
+
+function timeLeftFc() {
+    console.log("timeleft" + timeLeft);
+    if (timeLeft > 0) {
+
+        timeLeft--;
+        timeOut = setTimeout(timeLeftFc, 1000);
+    } else {
+
+
+        levelComplete();
+    }
 }
