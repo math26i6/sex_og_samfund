@@ -1,0 +1,423 @@
+#screen {
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.dissappear {
+    animation-name: dissappear_kf;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.59, -0.56, .77, 1.34);
+    animation-fill-mode: forwards;
+}
+
+@keyframes dissappear_kf {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+
+.fade_out {
+    animation-name: fadeout_kf;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeout_kf {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade_out2 {
+    animation-name: fadeout2_kf;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeout2_kf {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade_in {
+    animation-name: fade_in;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#menu_background {
+    overflow: hidden;
+}
+
+.zoom {
+    animation-name: zoom;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(3);
+    }
+}
+
+.zoommand {
+    animation-name: zoommand;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes zoommand {
+    0% {
+        transform: scale(1) translateY(1vw) translateX(1vw);
+    }
+
+    100% {
+        transform: scale(3) translateY(15vw) translateX(20vw);
+    }
+}
+
+#start_background {
+    background-image: url(grafik/Artboard%2018.svg);
+    background-size: cover;
+    position: relative;
+    width: 300vw;
+    height: 56.25vw;
+    animation-timing-function: linear;
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-200vw, 0, 0);
+    }
+}
+
+.paused {
+    animation-play-state: paused;
+}
+
+
+#mand_sprite {
+    background-size: 1800% 100%;
+    width: 15vw;
+    height: 30vw;
+    background-image: url(grafik/SPRITE10.svg);
+    position: absolute;
+    bottom: 6vw;
+    left: 15vw;
+}
+
+.walk {
+    animation-name: gå;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(18);
+
+}
+
+
+@keyframes gå {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -1800% 0;
+    }
+}
+
+#start {
+    background-image: url(grafik/play.svg);
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20vw;
+    height: 15vw;
+    top: 38vw;
+    left: 44vw;
+    cursor: pointer;
+
+
+}
+
+.pulse {
+    animation-name: pulse_kf;
+    animation-duration: 1.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
+
+@keyframes pulse_kf {
+    0% {
+        transform: scale(0.85);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#game_background {
+    background-color: darkblue;
+    background-size: cover;
+    position: relative;
+    width: 300vw;
+    height: 56.25vw;
+}
+
+.type1 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede2.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type2 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 25vw;
+    background-image: url(grafik/billede3.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type3 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede4.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type4 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 18vw;
+    background-image: url(grafik/billede5.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type5 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede6.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type6 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede7.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type7 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede8.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type8 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 22vw;
+    background-image: url(grafik/billede9.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type9 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede10.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type10 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 18vw;
+    background-image: url(grafik/billede11.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type11 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 17vw;
+    background-image: url(grafik/billede12.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+/*
+.type12 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede7.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.type13 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede7.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+*/
+/*
+.type14 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede7.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+.type15 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede7.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+.type16 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede7.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+.type17 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 15vw;
+    background-image: url(grafik/billede7.svg);
+    background-size: 100%;
+    cursor: pointer;
+}
+*/
+
+
+.position1 {
+    left: 47vw;
+    top: 25vw;
+}
+
+.position2 {
+    left: 21vw;
+    top: 25vw;
+}
+
+.position3 {
+    left: 74vw;
+    top: 25vw;
+}
+
+.position4 {
+    left: 0vw;
+    top: 25vw;
+}
+
+.falde {
+    animation-name: falde;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes falde {
+    0% {
+        transform: translateY(-100vw);
+    }
+
+    100% {
+        transform: translateY(30vw);
+    }
+}
