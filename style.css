@@ -11,6 +11,48 @@ body {
     display: none;
 }
 
+#time {
+    background-image: url(grafik/ur.svg);
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 12vw;
+    height: 15vw;
+    top: 0vw;
+    left: 0vw;
+}
+
+#urviser {
+    background-image: url(grafik/Ur%20viser.svg);
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1vw;
+    height: 4.3vw;
+    top: 4.1vw;
+    left: 5.6vw;
+}
+
+.rotate {
+    animation-name: rotate_kf;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+}
+
+@keyframes rotate_kf {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+
 .dissappear {
     animation-name: dissappear_kf;
     animation-duration: .5s;
@@ -112,7 +154,7 @@ body {
     }
 
     100% {
-        transform: scale(3) translateY(15vw) translateX(20vw);
+        transform: scale(3) translateY(20vw) translateX(20vw);
     }
 }
 
@@ -120,21 +162,21 @@ body {
     background-image: url(grafik/Artboard%2018.svg);
     background-size: cover;
     position: relative;
-    width: 300vw;
+    width: 100vw;
     height: 56.25vw;
     animation-timing-function: linear;
     animation-name: slide;
-    animation-duration: 20s;
+    animation-duration: 200s;
     animation-iteration-count: infinite;
 }
 
 @keyframes slide {
     0% {
-        transform: translate3d(0, 0, 0);
+        background-position: 0 0;
     }
 
     100% {
-        transform: translate3d(-200vw, 0, 0);
+        background-position: 1000%;
     }
 }
 
@@ -145,11 +187,11 @@ body {
 
 #mand_sprite {
     background-size: 1800% 100%;
-    width: 15vw;
-    height: 30vw;
+    width: 17vw;
+    height: 40vw;
     background-image: url(grafik/SPRITE10.svg);
     position: absolute;
-    bottom: 6vw;
+    bottom: 8vw;
     left: 15vw;
 }
 
@@ -421,4 +463,13 @@ body {
     100% {
         transform: translateY(30vw);
     }
+}
+
+.like {
+    width: 4.5vw;
+    height: 3.96vw;
+    background-image: url(grafik/Liv%20like.svg);
+    background-size: 100%;
+    margin-right: 0.9vw;
+    display: inline-block;
 }

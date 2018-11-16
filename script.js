@@ -66,7 +66,11 @@ function muteMusik() {
 
 function startGame() {
     console.log("start game");
+
     document.querySelector("#game_elements").classList.remove("zoommand");
+    document.querySelector("#time").classList.remove("hide");
+    document.querySelector("#urviser").classList.remove("hide");
+    document.querySelector("#urviser").classList.add("rotate");
     document.querySelector("#screen").classList.remove("fade_out2");
     document.querySelector("#start_background").classList.add("hide");
     document.querySelector("#game_background").classList.remove("hide");
@@ -96,7 +100,7 @@ function clickNøgen() {
     document.querySelector("#nøgen").classList.remove("falde");
     document.querySelector("#nøgen").removeEventListener("animationend", gameOver);
 
-    document.querySelector("#container1").classList.add("dissappear");
+    document.querySelector("#nøgen").classList.add("dissappear");
     document.querySelector("#nøgen").addEventListener("animationend", clearClassNøgen);
     document.querySelector("#nøgen").removeEventListener("click", clickNøgen);
 
@@ -127,11 +131,11 @@ function clickPerson() {
 
 
     document.querySelector("#person").classList.add("dissappear");
-    document.querySelector("#person").addEventListener("click", clearClassPerson);
     document.querySelector("#person").addEventListener("animationend", clearClassPerson);
     document.querySelector("#person").removeEventListener("click", clickPerson);
     document.querySelector("#person").removeEventListener("animationend", gonePerson);
 }
+
 
 function clearClassPerson() {
     document.querySelector("#person").removeAttribute("class");
@@ -154,21 +158,16 @@ function nyPerson() {
 
 function gonePerson() {
     life--;
-    console.log("life er" +
-        life);
+    document.querySelector("#like" + life).classList.add("hide");
+    console.log("life er" + life);
     console.log("person gone");
     if (life == 0) {
         gameOver();
     }
-    //   document.querySelector("#person").classList.remove("falde");
-    //
-    //
-    //    document.querySelector("#person").classList.add("dissappear");
-    //    document.querySelector("#person").addEventListener("click", clearClassPerson);
-    //    document.querySelector("#person").addEventListener("animationend", clearClassPerson);
-    //    document.querySelector("#person").removeEventListener("click", clickPerson);
-    //    document.querySelector("#person").removeEventListener("animationend", gonePerson);
+    document.querySelector("#person").classList.remove("dissappear");
 
+    document.querySelector("#person").addEventListener("click", clickPerson);
+    document.querySelector("#person").classList.add("falde");
 }
 
 function clickAndet() {
@@ -202,6 +201,7 @@ function nyAndet() {
 
 function levelComplete() {
     console.log("level complete")
+
 }
 
 function gameOver() {
